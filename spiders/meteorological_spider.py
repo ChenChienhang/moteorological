@@ -40,39 +40,22 @@ class MoteorologicalSpider(scrapy.Spider):
         data = datas.get('rows')
         try:
             for row in data:
-                if row['SFZPJFX']:
                     item['average_wind_direction_in_ten_minutes'] = row['SFZPJFX']
-                if row['LFZPJFX']:
                     item['average_wind_direction_in_two_minutes'] = row['LFZPJFX']
-                if row['SFZPJFS']:
                     item['average_wind_speed_in_ten_minutes'] = row['SFZPJFS']
-                if row['LFZPJFS']:
                     item['average_wind_speed_in_two_minutes'] = row['LFZPJFS']
-                if row['RYL']:
                     item['daily_rainfall'] = row['RYL']
-                if row['XSYL']:
                     item['hourly_rainfall'] = row['XSYL']
-                if row['SSFX']:
                     item['instantaneous_wind_direction'] = row['SSFX']
-                if row['SSFS']:
                     item['instantaneous_wind_speed'] = row['SSFS']
-                if row['ZDSZJD']:
                     item['longitude'] = row['ZDSZJD']
-                if row['ZDSZWD']:
                     item['latitude'] = row['ZDSZWD']
-                if row['QY']:
                     item['pressure'] = row['QY']
-                if row['XDSD']:
                     item['relative_humidity'] = row['XDSD']
-                if row['WD']:
                     item['temperature'] = row['WD']
-                if row['SJSC']:
                     item['time'] = row['SJSC']
-                if row['UPDATE_TIME']:
                     item['update_time'] = row['UPDATE_TIME']
-                if row['XMNDTZJD']:
                     item['weather_station_name'] = row['XMNDTZJD']
-                if row['QXZZH']:
                     item['weather_station_symbol'] = row['QXZZH']
                 yield item
         except:
