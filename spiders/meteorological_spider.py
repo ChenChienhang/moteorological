@@ -57,7 +57,7 @@ class MoteorologicalSpider(scrapy.Spider):
                     item['update_time'] = row['UPDATE_TIME']
                     item['weather_station_name'] = row['XMNDTZJD']
                     item['weather_station_symbol'] = row['QXZZH']
-                yield item
+                    yield item
         except:
             print('response 为空')
             pass
